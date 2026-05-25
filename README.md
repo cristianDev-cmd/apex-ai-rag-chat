@@ -23,14 +23,14 @@ The codebase is fully optimized for enterprise production environments, incorpor
 
 ## 🌟 Key Features
 
-### 1. AI RAG Chat Region Plugin (`plugin_plsql_chat_ai.sql`)
+### 1. AI RAG Chat Region Plugin (`region_type_plugin_com_chat_ai.sql`)
 * **Premium Glassmorphism Design:** Modern floating chat window featuring background blurs (`backdrop-filter`), smooth typing animations, and subtle bot indicators.
 * **APEX Universal Theme Integration:** Automatically synchronizes with the host application's active style system using native CSS variables.
 * **Custom Brand Icon Support:** Supply a custom `widget_icon_url` to completely suppress default button backgrounds, borders, or circles across all interactive states (`hover`, `focus`, `active`).
 * **Native Session Persistence:** Uses `APEX_COLLECTION` (`AI_CHAT_SESSION_MEMORIA`) to save conversation history in memory, automatically rebuilding and re-rendering bubbles upon page reload or refresh without database table overhead.
 * **Dynamic Category Filtering:** Map a Page Item dynamically to restrict RAG vector searches based on context in real-time.
 
-### 2. AI RAG Data Loader Process Plugin (`loader_plugin_plsql_code.sql`)
+### 2. AI RAG Data Loader Process Plugin (`process_type_plugin_rag_dataloader.sql`)
 * **APEX 26.1 Callback Procedure:** Programmed in accordance with the modern process plugin execution signature (`IN OUT NOCOPY` parameter) to completely prevent `PLS-00306` callback errors.
 * **Dual Write Modes:**
   * **`REPLACE`:** Securely deletes previous chunks of a document and generates new embeddings in a single atomic transaction.
@@ -70,30 +70,22 @@ CREATE TABLE RAG_DOCUMENTS (
 
 ## 🚀 Installation & Setup in Oracle APEX
 
-### Step 1: Compile the RAG Loader Procedure
-1. Navigate to **SQL Workshop > SQL Commands** or log in via **SQLcl**.
-2. Run and compile the source code of the [loader_plugin_plsql_code.sql](file:///c:/Users/cristian/Desktop/plugin%20chat/loader_plugin_plsql_code.sql) file.
+Installing the suite is incredibly fast and simple because the plugins are pre-packaged with all metadata, custom attributes, CSS/JS resources, and PL/SQL inline logic:
 
-### Step 2: Register Plugins in Shared Components
+1. **Download the Plugin Files:**
+   * Download the two `.sql` plugin export files from this repository:
+     * `region_type_plugin_com_chat_ai.sql` (The floating chat region plugin)
+     * `process_type_plugin_rag_dataloader.sql` (The RAG data loader process plugin)
 
-#### A. AI Chat RAG Region Plugin
-1. Go to **Shared Components > Plugins > Create**.
-2. **Name:** `AI Chat RAG Region`
-3. **Internal Name:** `COM.CRISTIAN.CHAT.AI`
-4. **Type:** `Region`
-5. **PL/SQL Code:** Paste the content of [plugin_plsql_chat_ai.sql](file:///c:/Users/cristian/Desktop/plugin%20chat/plugin_plsql_chat_ai.sql).
-6. **Render Function Name:** `e_render_chat`
-7. **AJAX Function Name:** `e_ajax_chat`
-8. **Atributos:** Configure region attributes (such as *API Key*, *RAG Table*, *Embedding Column*, *Welcome Message*).
+2. **Import into Oracle APEX:**
+   * Open your APEX Application Builder.
+   * Go to **Shared Components > Plugins**.
+   * Click **Import** and select the file **`region_type_plugin_com_chat_ai.sql`**. Follow the wizard to complete the import.
+   * Repeat the step for **`process_type_plugin_rag_dataloader.sql`**.
 
-#### B. AI RAG Data Loader Process Plugin
-1. Go to **Shared Components > Plugins > Create**.
-2. **Name:** `AI RAG Data Loader`
-3. **Internal Name:** `COM.CRISTIAN.LOADER.AI`
-4. **Type:** `Process`
-5. **PL/SQL Code:** Paste the call to the compiled procedure (`e_execute_loader`).
-6. **Execution Function Name:** `e_execute_loader`
-7. **Atributos:** Configure process attributes (*API Key*, *Target Table*, *Title Item*, *Content Item*, *Write Mode*, *Chunk Size*, *Chunk Overlap*).
+3. **Configure API Key (Component Settings):**
+   * While in **Shared Components > Plugins**, click on **AI Chat RAG Region** or **AI RAG Data Loader**.
+   * Under the **Component Settings** section, paste your global **Google Gemini API Key**. This key will be securely shared and used across all instances of the plugins in your application!
 
 ---
 
@@ -174,14 +166,14 @@ El desarrollo está completamente optimizado para entornos de producción, con b
 
 ## 🌟 Características Clave
 
-### 1. AI RAG Chat Region Plugin (`plugin_plsql_chat_ai.sql`)
+### 1. AI RAG Chat Region Plugin (`region_type_plugin_com_chat_ai.sql`)
 * **Diseño Glassmorphism Premium:** Ventana de chat moderna con efectos traslúcidos (`backdrop-filter`), animaciones sutiles del bot y un indicador interactivo de escritura (*typing indicator*).
 * **Adaptabilidad (Universal Theme):** Integra variables CSS globales de APEX para sincronizarse automáticamente con el esquema de colores de la aplicación.
 * **Soporte de Ícono de Marca Personalizada:** Permite un ícono flotante personalizado (`widget_icon_url`), eliminando automáticamente bordes y círculos de fondo predeterminados en todos los estados físicos de interacción (`hover`, `focus`, `active`).
 * **Persistencia de Sesión Nativa:** Utiliza `APEX_COLLECTION` (`AI_CHAT_SESSION_MEMORIA`) para persistir la conversación de manera nativa e inmediata, permitiendo reconstruir y re-renderizar todo el historial de chat de forma automática al recargar o refrescar la página.
 * **Filtro de Categorías Dinámico:** Permite asociar un elemento de página (Page Item) para segmentar el conocimiento RAG en tiempo real de forma dinámica.
 
-### 2. AI RAG Data Loader Process Plugin (`loader_plugin_plsql_code.sql`)
+### 2. AI RAG Data Loader Process Plugin (`process_type_plugin_rag_dataloader.sql`)
 * **APEX 26.1 Callback Procedure:** Diseñado conforme a la especificación moderna de plugins de tipo proceso (`IN OUT NOCOPY` parameter signature) para evitar fallos de compilación `PLS-00306`.
 * **Doble Modo de Escritura:**
   * **`REPLACE`:** Borra en una transacción segura los chunks y embeddings anteriores de un título y genera la nueva estructura desde cero.
@@ -221,31 +213,22 @@ CREATE TABLE RAG_DOCUMENTS (
 
 ## 🚀 Guía de Instalación en Oracle APEX
 
-### Paso 1: Compilar la lógica del Cargador RAG
-1. Ve a **SQL Workshop > SQL Commands** o ingresa mediante **SQLcl**.
-2. Compila el código del archivo [loader_plugin_plsql_code.sql](file:///c:/Users/cristian/Desktop/plugin%20chat/loader_plugin_plsql_code.sql) en el esquema de tu aplicación APEX.
+La instalación de la suite es sumamente rápida y sencilla, ya que los plugins se encuentran pre-empaquetados con toda su metadata, atributos personalizados, recursos CSS/JS y lógica PL/SQL:
 
-### Paso 2: Configurar los Plugins en APEX Shared Components
-Para cada uno de los dos plugins de la suite:
+1. **Descargar los Archivos del Plugin:**
+   * Descarga los dos archivos de exportación `.sql` desde este repositorio:
+     * `region_type_plugin_com_chat_ai.sql` (El plugin de región de chat flotante)
+     * `process_type_plugin_rag_dataloader.sql` (El plugin de proceso de carga RAG)
 
-#### A. Registro del Plugin de Región: **AI Chat RAG Region**
-1. Ve a **Shared Components > Plugins > Create**.
-2. **Name:** `AI Chat RAG Region`
-3. **Internal Name:** `COM.CRISTIAN.CHAT.AI`
-4. **Type:** `Region`
-5. **PL/SQL Code:** Pega el contenido íntegro del archivo [plugin_plsql_chat_ai.sql](file:///c:/Users/cristian/Desktop/plugin%20chat/plugin_plsql_chat_ai.sql).
-6. **Render Function Name:** `e_render_chat`
-7. **AJAX Function Name:** `e_ajax_chat`
-8. **Atributos de Región:** Registra las propiedades requeridas en Shared Components (como *API Key*, *RAG Table*, *Embedding Column*, *Welcome Message*, etc.).
+2. **Importar en Oracle APEX:**
+   * Abre tu Application Builder en APEX.
+   * Dirígete a **Shared Components > Plugins**.
+   * Presiona el botón **Import** y selecciona el archivo **`region_type_plugin_com_chat_ai.sql`**. Sigue el asistente para finalizar la importación.
+   * Repite el mismo paso para importar el archivo **`process_type_plugin_rag_dataloader.sql`**.
 
-#### B. Registro del Plugin de Proceso: **AI RAG Data Loader**
-1. Ve a **Shared Components > Plugins > Create**.
-2. **Name:** `AI RAG Data Loader`
-3. **Internal Name:** `COM.CRISTIAN.LOADER.AI`
-4. **Type:** `Process`
-5. **PL/SQL Code:** Llama al procedimiento compilado en el Paso 1 (`e_execute_loader`).
-6. **Execution Function Name:** `e_execute_loader`
-7. **Atributos de Proceso:** Registra los campos obligatorios del cargador (*API Key*, *Target Table*, *Title Item*, *Content Item*, *Write Mode*, *Chunk Size*, *Chunk Overlap*).
+3. **Configurar la API Key (Component Settings):**
+   * Dentro de **Shared Components > Plugins**, haz click en **AI Chat RAG Region** o en **AI RAG Data Loader**.
+   * En la sección **Component Settings**, pega tu **Google Gemini API Key** global. ¡Esta clave se compartirá y utilizará de forma segura en todas las páginas donde instancies los plugins en tu app!
 
 ---
 
