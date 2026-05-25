@@ -140,6 +140,14 @@ To deploy the chat interface:
 * **Bind Parameters:** Evaluates cosine searches using secure cursor bindings (`USING`) to prevent statement injection.
 
 ---
+
+## 📬 Contact & Support
+
+For business inquiries, professional custom integrations, or questions regarding this suite:
+* **Email:** [alc.cris.dev@gmail.com](mailto:alc.cris.dev@gmail.com)
+* **LinkedIn:** [Cristian Alcántara](https://www.linkedin.com/in/cristian-alcantara-a402821b3)
+
+---
 ---
 
 # ## Spanish Version / Versión en Español: Oracle APEX AI Chat & RAG Data Loader Suite
@@ -281,6 +289,14 @@ Tanto el chat como el procesador del cargador dinámico aplican validaciones est
 * **Sanitización Dinámica:** Implementa llamadas a `DBMS_ASSERT.ENQUOTE_NAME` en los nombres de tablas y columnas variables ingresadas en Page Designer.
 * **Escapado HTML Seguro:** El script del cliente implementa llamadas a `apex.util.escapeHTML(...)` contra todos los inputs de usuario antes de renderizar burbujas en el DOM, anulando vectores de ataque Cross-Site Scripting (XSS).
 * **Parámetros Bindados:** Las consultas vectoriales se realizan mediante cursores referenciados seguros aplicando Binds (`USING`) para las variables vectoriales y de categorías dinámicas.
+
+---
+
+## 📬 Contacto y Soporte
+
+Para consultas comerciales, integraciones profesionales personalizadas o dudas sobre esta suite:
+* **Correo Electrónico:** [alc.cris.dev@gmail.com](mailto:alc.cris.dev@gmail.com)
+* **LinkedIn:** [Cristian Alcántara](https://www.linkedin.com/in/cristian-alcantara-a402821b3)
 
 ---
 
