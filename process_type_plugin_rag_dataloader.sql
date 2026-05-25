@@ -33,7 +33,7 @@ prompt APPLICATION 103 - Agente ia
 -- Application Export:
 --   Application:     103
 --   Name:            Agente ia
---   Date and Time:   20:27 Monday May 25, 2026
+--   Date and Time:   20:54 Monday May 25, 2026
 --   Exported By:     CRISTIAN
 --   Flashback:       0
 --   Export Type:     Component Export
@@ -318,7 +318,7 @@ unistr('    -- Retornar mensaje de \00E9xito legible en APEX (Dynamic detailed R
 ''))
 ,p_api_version=>3
 ,p_execution_function=>'e_execute_loader'
-,p_version_scn=>'SH256:-T1IuTcpc7s9KR44CDJE-qbOws3haCYR4Ati3IeXWX0'
+,p_version_scn=>'SH256:N4PEKce2UtDr6s4qWzX7otjk7_g3yJ79fm6_t4Qxh7Y'
 ,p_version_identifier=>'1.0'
 ,p_files_version=>2461184190732
 );
@@ -374,7 +374,7 @@ wwv_flow_imp_shared.create_plugin_attribute(
 ,p_plugin_id=>wwv_flow_imp.id(3574063400042527)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>4
-,p_display_sequence=>40
+,p_display_sequence=>25
 ,p_static_id=>'item_category'
 ,p_prompt=>'Document Category (Page Item)'
 ,p_apexlang_name=>'pageItemDeCategora'
@@ -395,7 +395,6 @@ wwv_flow_imp_shared.create_plugin_attribute(
 ,p_apexlang_name=>'pageItemDelContenido'
 ,p_attribute_type=>'TEXT'
 ,p_is_required=>true
-,p_default_value=>'content'
 ,p_is_translatable=>false
 ,p_examples=>'P2_DOCUMENT_CONTENT, P15_CLOB_DATA'
 ,p_help_text=>'The name of the Page Item (Rich Text, Textarea, or File Browser) holding the CLOB content of the document to be parsed.'
@@ -411,7 +410,6 @@ wwv_flow_imp_shared.create_plugin_attribute(
 ,p_apexlang_name=>'pageItemDelTtulo'
 ,p_attribute_type=>'TEXT'
 ,p_is_required=>true
-,p_default_value=>'title'
 ,p_is_translatable=>false
 ,p_examples=>'P2_DOCUMENT_TITLE'
 ,p_help_text=>'The name of the Page Item holding the title, file name, or source identifier for the document being processed.'
