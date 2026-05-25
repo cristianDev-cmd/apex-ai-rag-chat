@@ -311,12 +311,41 @@ BEGIN
     sys.htp.prn('    </div>');
     
     sys.htp.prn('    <div id="mendobot-chat-messages-' || v_escaped_region_id || '" class="mendobot-chat-body">');
+    
+    -- Mensaje de bienvenida inicial
     sys.htp.prn('      <div class="mendobot-message mendobot-msg-bot">');
     sys.htp.prn('        <div class="mendobot-msg-bubble">');
     sys.htp.prn('          ' || apex_escape.html(v_welcome_msg));
     sys.htp.prn('        </div>');
     sys.htp.prn('        <span class="mendobot-msg-time">' || TO_CHAR(SYSDATE, 'HH24:MI') || '</span>');
     sys.htp.prn('      </div>');
+    
+    -- Cargar mensajes previos desde la colección si existen
+    IF apex_collection.collection_exists('AI_CHAT_SESSION_MEMORIA') THEN
+        FOR r_hist IN (
+            SELECT c001 AS preg, c002 AS resp, seq_id
+              FROM apex_collections
+             WHERE collection_name = 'AI_CHAT_SESSION_MEMORIA'
+             ORDER BY seq_id ASC
+        ) LOOP
+            -- Burbuja del usuario
+            sys.htp.prn('      <div class="mendobot-message mendobot-msg-user">');
+            sys.htp.prn('        <div class="mendobot-msg-bubble">');
+            sys.htp.prn('          ' || apex_escape.html(r_hist.preg));
+            sys.htp.prn('        </div>');
+            sys.htp.prn('        <span class="mendobot-msg-time">' || TO_CHAR(SYSDATE, 'HH24:MI') || '</span>');
+            sys.htp.prn('      </div>');
+            
+            -- Burbuja del bot
+            sys.htp.prn('      <div class="mendobot-message mendobot-msg-bot">');
+            sys.htp.prn('        <div class="mendobot-msg-bubble">');
+            sys.htp.prn('          ' || r_hist.resp); -- La respuesta ya está formateada o limpia del RAG
+            sys.htp.prn('        </div>');
+            sys.htp.prn('        <span class="mendobot-msg-time">' || TO_CHAR(SYSDATE, 'HH24:MI') || '</span>');
+            sys.htp.prn('      </div>');
+        END LOOP;
+    END IF;
+    
     sys.htp.prn('    </div>');
     
     sys.htp.prn('    <div class="mendobot-chat-footer">');
@@ -492,13 +521,8 @@ BEGIN
         p_c002            => v_resp_str
     );
 
-    BEGIN
-        INSERT INTO ai_chat_historial (usuario, pregunta, respuesta)
-        VALUES (NVL(V('APP_USER'), 'ANONYMOUS'), v_pregunta, v_resp_str);
-    EXCEPTION
-        WHEN OTHERS THEN
-            APEX_DEBUG.ERROR('No se pudo guardar la auditoría física del chat: ' || SQLERRM);
-    END;
+    -- Audit logging removed per user request (only using session collection memory)
+    NULL;
 
     -- PASO E: RETORNAR RESPUESTA JSON SEGURA AL CLIENTE
     BEGIN 
