@@ -1,0 +1,10 @@
+# Agent & IDE Configurations
+.agents/
+skills-lock.json
+.vscode/
+.idea/
+
+# OS files
+Thumbs.db
+Desktop.ini
+.DS_Store
