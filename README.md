@@ -4,7 +4,10 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](https://opensource.org/licenses/MIT)
 [![Database](https://img.shields.io/badge/Oracle%20Database-23ai%20%2F%2023c-red.svg?style=flat-square)](https://www.oracle.com/database/)
 
-Una suite de componentes premium de **marca blanca** e integración nativa para dotar a aplicaciones **Oracle APEX 26.1+** de capacidades inteligentes mediante arquitectura de Generación Aumentada por Recuperación (RAG) utilizando los modelos avanzados **Google Gemini 2.5**.
+Una suite de componentes premium de **marca blanca** e integración nativa para dotar a aplicaciones **Oracle APEX 26.1+** de capacidades inteligentes mediante arquitectura de Generación Aumentada por Recuperación (RAG).
+
+> [!NOTE]
+> Por el momento, la suite utiliza los modelos avanzados **Google Gemini 2.5 Flash** (tanto para la generación de contenido en lenguaje natural como para la obtención de embeddings vectoriales). En próximas versiones se integrará la compatibilidad nativa con otros proveedores y modelos de Inteligencia Artificial líderes del mercado (tales como OpenAI GPT, Anthropic Claude u OCI GenAI).
 
 El desarrollo está completamente optimizado para entornos de producción, con blindaje de seguridad contra inyecciones SQL y un diseño visual de última generación.
 
