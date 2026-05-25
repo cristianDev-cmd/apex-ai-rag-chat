@@ -41,7 +41,10 @@ The codebase is fully optimized for enterprise production environments, incorpor
 
 ## 📋 Conjoint Workflow & Auto Table Creation
 
-These plugins are designed to be **used in conjunction**, enabling a seamless end-to-end RAG architecture:
+These plugins are designed to be **used in conjunction**, enabling a seamless end-to-end RAG architecture.
+
+> [!IMPORTANT]
+> The database backend must support native vectors. This suite is fully optimized to run on **Oracle Database 23ai** (which is the latest Long Term Support release of Oracle's flagship database, featuring advanced native vector support).
 
 1. **Loader Phase (Process - `loader_plugin_plsql_code.sql`):**
    Executed from the content administration page. This process takes your documents, splits them into optimal semantic fragments (chunks), generates embeddings via Gemini, and stores them.
@@ -189,7 +192,10 @@ El desarrollo está completamente optimizado para entornos de producción, con b
 
 ## 📋 Flujo de Trabajo en Conjunto y Creación Automática de Tablas
 
-Estos dos plugins están diseñados para **usarse en conjunto**, facilitando un flujo de trabajo RAG de extremo a extremo sin configuraciones manuales complejas:
+Estos dos plugins están diseñados para **usarse en conjunto**, facilitando un flujo de trabajo RAG de extremo a extremo sin configuraciones manuales complejas.
+
+> [!IMPORTANT]
+> El motor de base de datos debe soportar vectores nativos. Esta suite está 100% optimizada para ejecutarse sobre **Oracle Database 23ai** (la cual es la última versión de soporte a largo plazo de la base de datos insignia de Oracle y la primera en incluir soporte de búsqueda vectorial nativa).
 
 1. **Fase de Carga y Fragmentación (Proceso - `loader_plugin_plsql_code.sql`):**
    Se ejecuta primero desde la página de administración de contenidos. Este plugin toma tus documentos, los divide en fragmentos optimizados (chunks), genera sus vectores de embedding con la API de Gemini y los almacena en tu base de datos.
