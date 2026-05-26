@@ -97,7 +97,7 @@ Installing the suite is incredibly fast and simple because the plugins are pre-p
 ### ⚙️ Example 1: Document Loader Page Flow
 To slice and load text dynamically into your database:
 
-1. Create a **File Browse** or **Text Area** item (`P10_CONTENT`) and a **Text Field** item (`P10_TITLE`).
+1. Create a **Text Area** item (`P10_CONTENT`) and a **Text Field** item (`P10_TITLE`).
 2. Add an optional text field for the category (`P10_CATEGORY`).
 3. Under the Page Processing stream, add a new **Process** referencing the **`AI RAG Data Loader`** plugin.
 4. Assign attributes:
@@ -243,7 +243,7 @@ La instalación de la suite es sumamente rápida y sencilla, ya que los plugins 
 ### ⚙️ Ejemplo 1: Flujo del Cargador RAG en Página de Carga
 Para cargar datos estructurados desde una interfaz web a tu modelo de embeddings:
 
-1. Crea un **File Browse** o un **Text Area** para ingresar tu contenido (`P10_CONTENT`).
+1. Crea un **Text Area** para ingresar tu contenido (`P10_CONTENT`).
 2. Agrega un Page Item para el título del documento (`P10_TITLE`).
 3. Agrega un Page Item para la categoría opcional (`P10_CATEGORY`).
 4. En el flujo de procesamiento de la página, crea un nuevo **Process** asociado al plugin **`AI RAG Data Loader`**.
