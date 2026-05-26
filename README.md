@@ -4,7 +4,10 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](https://opensource.org/licenses/MIT)
 [![Database](https://img.shields.io/badge/Oracle%20Database-23ai%20%2F%2023c-red.svg?style=flat-square)](https://www.oracle.com/database/)
 
-A premium, white-label, and natively integrated suite designed to equip **Oracle APEX 26.1+** applications with advanced Retrieval-Augmented Generation (RAG) capabilities.
+A premium, white-label, and natively integrated suite designed to quickly build an **intelligent chat interface to query your database contents** using advanced Retrieval-Augmented Generation (RAG) capabilities.
+
+> [!TIP]
+> **100% Plug-and-Play Setup:** Everything is fully integrated and ready to go. Simply import the plugins, enter your Gemini API Key, load your document contents through the loader process, and immediately start querying your database contents through the interactive chat interface!
 
 > [!NOTE]
 > Currently, the suite utilizes the advanced **Google Gemini 2.5 Flash** models (for both natural language generation and vector embeddings). Future versions of the suite will feature native support for other leading AI providers and models (such as OpenAI GPT, Anthropic Claude, and OCI GenAI).
@@ -147,7 +150,10 @@ For business inquiries, professional custom integrations, or questions regarding
 
 # ## Spanish Version / Versión en Español: Oracle APEX AI Chat & RAG Data Loader Suite
 
-Una suite de componentes premium de **marca blanca** e integración nativa para dotar a aplicaciones **Oracle APEX 26.1+** de capacidades inteligentes mediante arquitectura de Generación Aumentada por Recuperación (RAG).
+Una suite de componentes premium de **marca blanca** e integración nativa para construir rápidamente una **interfaz de chat inteligente para consultar los datos de tu base de datos** utilizando capacidades de Generación Aumentada por Recuperación (RAG).
+
+> [!TIP]
+> **Configuración 100% Plug-and-Play:** Todo está completamente integrado y listo para funcionar. Simplemente importa los plugins, ingresa tu API Key de Gemini, carga tus contenidos a través del proceso cargador, ¡y empieza a consultar los datos de tu base de datos de inmediato en el chat interactivo!
 
 > [!NOTE]
 > Por el momento, la suite utiliza los modelos avanzados **Google Gemini 2.5 Flash** (tanto para la generación de contenido en lenguaje natural como para la obtención de embeddings vectoriales). En próximas versiones se integrará la compatibilidad nativa con otros proveedores y modelos de Inteligencia Artificial líderes del mercado (tales como OpenAI GPT, Anthropic Claude u OCI GenAI).
